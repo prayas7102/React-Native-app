@@ -9,7 +9,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-package-lock.json/
+/package-lock.json
+/react-native
 
 # macOS
 .DS_Store
