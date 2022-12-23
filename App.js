@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
-let color = 'rgba(255, 125, 125, 0.5)';
+let color = 'rgba(255, 125, 125, 0.6)';
 export default function App() {
   let x = 0;
   let arr = [...Array(20)].map(() => { return Math.floor(Math.random() * 30) });
