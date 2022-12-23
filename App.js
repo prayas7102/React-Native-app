@@ -1,30 +1,19 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react';
+import { Button, Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
-let color = 'rgba(255, 125, 125, 0.6)';
 export default function App() {
-  let x = 0;
-  let arr = [...Array(20)].map(() => { return Math.floor(Math.random() * 30) });
-  console.log(arr[0]);
-
-  function handleClick(e){ console.log(e.target.value) }
+  
+  const [notification, setNotification] = useState("Player X will start");
+  const [board, setBoard] = useState(
+      [" "," "," ",
+      " "," "," ",
+      " "," "," ",]
+    );
 
   return (
     <View style={styles.container}>
-      <Text>{x}</Text>
-
-
-      <View>{arr.map((k, i) => {
-        return (
-        <TouchableOpacity key={i}>
-          <Text onPress={handleClick}>{k}</Text>
-        </TouchableOpacity>
-        )
-      })}
-      </View>
-
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
+      <Text style={styles.txt}>TicTacToe</Text>
     </View>
   );
 }
@@ -39,4 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  txt:{
+    fontSize: 50,
+  }
 });
