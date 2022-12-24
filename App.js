@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { Button, Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
 
 export default function App() {
-  
-  const [notification, setNotification] = useState("Player X will start");
-  const [board, setBoard] = useState(
-      [" "," "," ",
-      " "," "," ",
-      " "," "," ",]
-    );
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto"/>
-      <Text style={styles.txt}>TicTacToe</Text>
-    </View>
+    <Provider store={}>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <Text style={styles.txt}>TicTacToe</Text>
+      </View>
+    </Provider>
+
   );
 }
 
@@ -28,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  txt:{
+  txt: {
     fontSize: 50,
   }
 });
