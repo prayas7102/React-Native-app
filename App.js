@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { Button, Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { store } from './store';
+import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
 
   return (
-    <Provider store={}>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <Text style={styles.txt}>TicTacToe</Text>
-      </View>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <View style={styles.container}>
+          <StatusBar style="auto" />
+          <HomeScreen />
+          <Text style={styles.txt}>UBER</Text>
+        </View>
+      </SafeAreaProvider>
     </Provider>
 
   );
@@ -21,7 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: color,
+    // backgroundColor: "#fff",
     flex: 1,
     justifyContent: 'center',
   },
